@@ -327,22 +327,75 @@ span {
     display: inline-block;
  }
 
- .video-row {
+ .recent {
+    padding: 10rem 9% 2rem;
+  }
+  
+  .recent .heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  .recent .heading span {
+    color: var(--main-color);
+  }
+  
+  .video-row {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .video-column {
+    margin: 2rem;
+    text-align: center;
+  }
+  
+  .video-column video {
     width: 100%;
- }
-
- .video-row .video-column video {
-    padding-left: 3rem;
+    max-width: 510px;
     padding-bottom: 1rem;
-    padding-top: 5rem;
-    width: 510px;
-    /* border: .2rem solid var(--main-color); */
- }
-
- .video-row .video-column h1{
-    padding-left: 3rem;
- }
+  }
+  
+  .video-column h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: var(--text-color);
+  }
+  
+  .category-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .category-buttons button {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    margin: 0 1rem;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-buttons button.active {
+    background-color: var(--second-bg-color);
+  }
+  
+  .category-buttons button:hover {
+    background-color: var(--second-bg-color);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .video-column {
+      flex-basis: 100%;
+    }
+  }
+  
 
  /* .title {
     display: flex;
@@ -374,59 +427,99 @@ span {
  .contact {
     min-width: auto;
     padding-bottom: 7rem;
- }
-
- .contact form {
-    max-width: 70rem;
+  }
+  
+  .contact .max-width {
+    max-width: 80rem; /* Increased width for better layout */
     margin: 0 auto;
     text-align: center;
- }
-
- .contact form .input-box {
-    position: relative;
+  }
+  
+  .contact .input-box {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
- }
-
- .contact form .input-box .input-field {
-    position: relative;
-    width: 49%;
-    margin: .8rem 0;
- }
-
- .contact form .input-box .input-field input,
- .contact form .textarea-field textarea {
+  }
+  
+  .contact .input-box .input-field {
+    width: calc(50% - 1rem); /* Adjusted width to fit within 50% of the container */
+    margin: 0.5rem;
+  }
+  
+  .contact .input-box .input-field input,
+  .contact .input-box .textarea-field textarea {
     width: 100%;
-    height: 100%;
-    padding: 1.5rem;
+    padding: 1rem;
     font-size: 1.6rem;
     color: var(--text-color);
     background: transparent;
-    border-radius: .6rem;
-    border: .2rem solid var(--main-color);
- }
-
- .contact form .input-box .input-field input::placeholder,
- .contact form .textarea-field textarea::placeholder{
+    border-radius: 0.6rem;
+    border: 0.2rem solid var(--main-color);
+  }
+  
+  .contact .input-box .input-field input::placeholder,
+  .contact .input-box .textarea-field textarea::placeholder {
     color: var(--text-color);
- }
-
- .contact form .textarea-field  {
-    position: relative;
-    margin: .8rem 0 2.7rem;
-    display: flex;
- }
- .contact form .textarea-field textarea {
+  }
+  
+  .contact .textarea-field {
+    margin: 0.8rem 0 2.7rem;
+  }
+  
+  .contact .textarea-field textarea {
+    width: 100%;
     resize: none;
- }
-
-.contact .contact-content{
+  }
+  
+  .contact .contact-content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-}
+    justify-content: center;
+  }
+  
+  .contact .contact-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .contact .contact-icons .icon {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .contact .contact-icons .icon i {
+    font-size: 2.5rem; /* Increased icon size */
+    margin-right: 0.5rem;
+  }
+  
+  .contact .contact-icons .icon span {
+    font-size: 1.4rem; /* Reduced font size for span */
+  }
+  
+  .contact .contact-icons .icon:hover {
+    transform: scale(1.1); /* Scale up on hover */
+  }
+  
+  /* Modern icons for email, phone, and WhatsApp */
+  .contact .contact-icons .icon i.fa-envelope {
+    color: #EA4335; /* Red color for Gmail */
+  }
+  
+  .contact .contact-icons .icon i.fa-phone-alt {
+    color: #00BFA6; /* Green color for Phone */
+  }
+  
+  .contact .contact-icons .icon i.fa-whatsapp {
+    color: #25D366; /* Green color for WhatsApp */
+  }
+  
+  
+  
  section .title{
     position: relative;
     text-align: center;
