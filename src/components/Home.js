@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import sample from "../videos/sample.mp4"
 
 const Home = () => {
   const [text, setText] = useState('');
@@ -29,7 +30,7 @@ const Home = () => {
           </p>
           <div className="btn-box">
             <button className="btn" onClick={() => setShowModal(true)}>Watch</button>
-            <a href="#contact" className="btn">Connect</a>
+            <a href="/contact" className="btn">Connect</a>
           </div>
         </div>
         <div className="home-sci">
@@ -43,8 +44,8 @@ const Home = () => {
         <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={() => setShowModal(false)}>&times;</span>
-            <video width="100%" controls>
-              <source src="your-showreel-video.mp4" type="video/mp4" />
+            <video  autoPlay loop controls width="100%" height="100%">
+              <source src={sample} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
