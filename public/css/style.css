@@ -12,10 +12,10 @@
 }
 
 :root{
-    --bg-color: #081b29;
-    --second-bg-color: #112e42;
+    --bg-color: #000000;
+    --second-bg-color: #06121a;
     --text-color: #ededed;
-    --main-color: #00abf0;
+    --main-color: #f0f6f8;
 }
 
 html {
@@ -42,6 +42,21 @@ body{
     transition: .3s;
 }
 
+.dark{
+  position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2rem 9%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+  background-color: rgb(14, 13, 13, 0.8);
+  backdrop-filter: blur(10px);
+  color: #fff8f8;
+}
 .header.sticky {
     background: var(--bg-color);
 }
@@ -76,6 +91,22 @@ section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
 }
+
+.home {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-container {
+  margin-top: 2rem;
+  width: 100%;
+  height: auto;
+}
+
+.blurred-background {
+  filter: blur(10px);
+}
+
 
 .home-content-container {
     display: flex;
@@ -126,19 +157,7 @@ section {
     margin-top: 2rem;
   }
   
-  .modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
+
   .modal-content {
     padding: 2rem;
     border-radius: 0.5rem;
@@ -147,7 +166,7 @@ section {
   }
   
   .close {
-    color: #aaa;
+    color: #ffffff;
     float: right;
     font-size: 2rem;
     font-weight: bold;
@@ -156,7 +175,7 @@ section {
   
   .close:hover,
   .close:focus {
-    color: black;
+    color: rgb(255, 136, 136);
     text-decoration: none;
     cursor: pointer;
   }
@@ -265,7 +284,7 @@ section {
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-  background: var(--second-bg-color);
+  background: black;
   padding-bottom: 6rem;
   padding-top: 3rem; /* Adjusted top padding for better spacing */
 }
@@ -282,73 +301,48 @@ span {
 
 .about-img {
   position: relative;
-  width: 25rem;
-  height: 25rem;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.about-img img {
-  width: 80%;
-  border-radius: 60%;
-  border: .2rem solid var(--main-color);
-}
-
-.about-img .circle-sp.about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2rem;
-  background: var(--second-bg-color);
-  padding: 50px 20px; /* Adjusted padding for better spacing */
-}
-
-.heading {
-  font-size: 3rem; /* Adjusted heading font size */
-  margin-bottom: 1.5rem; /* Adjusted margin for heading */
-  text-align: center;
-  color: var(--main-color); /* Added color for consistency */
-}
-
-.about-img {
-  position: relative;
   width: 200px; /* Adjusted size for profile image */
   height: 200px; /* Adjusted size for profile image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   overflow: hidden; /* Ensures border-radius applies correctly */
 }
 
-.about-img img {
+.new-design {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000; /* Change to black */
+  border-radius: 50%; /* Ensures the shape is circular */
+}
+
+.new-design img {
+  width: 80%;
+  border-radius: 50%;
 }
 
 .about-content {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  font-size: 5rem;
 }
 
-.about-content h3 {
-  font-size: 2rem; /* Adjusted heading font size */
-  margin-bottom: 1rem; /* Adjusted margin for heading */
-  color: var(--main-color); /* Added color for consistency */
-}
+
 
 .about-content p {
-  font-size: 1.2rem; /* Adjusted paragraph font size */
+  font-size: 1.8rem; /* Adjusted paragraph font size */
   line-height: 1.6; /* Improved readability with line-height */
-  color: #666; /* Adjusted color for readability */
+  color: #ffffff; /* Adjusted color for readability */
   margin-bottom: 2rem;
 }
 
 .services {
   margin-top: 50px;
-  background-color: #fff; /* Added background color to services section */
   padding: 30px; /* Added padding for spacing */
   border-radius: 10px; /* Rounded corners for services section */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
@@ -387,53 +381,16 @@ span {
 }
 
 .service-card h4 {
-  font-size: 1.5rem; /* Adjusted heading font size */
+  font-size: 1.8rem; /* Adjusted heading font size */
   margin-bottom: 10px;
   color: var(--main-color); /* Added color for consistency */
 }
 
 .service-card p {
-  font-size: 1rem;
-  color: #666; /* Adjusted color for readability */
+  font-size: 1.3rem;
+  color: #fff8f8; /* Adjusted color for readability */
 }
 
-
-.services {
-  margin-top: 50px;
-}
-
-.services-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-.service-card {
-  width: 300px;
-  padding: 20px;
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.service-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.service-card h4 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.service-card p {
-  font-size: 1rem;
-}
-
-
- .btn-box.btns {
-    display: inline-block;
- }
 
  .recent {
     padding: 10rem 9% 2rem;
@@ -482,7 +439,7 @@ span {
     font-size: 1.6rem;
     padding: 1rem 2rem;
     margin: 0 1rem;
-    background-color: var(--main-color);
+    background-color: white;
     color: var(--bg-color);
     border: none;
     border-radius: 0.8rem;
@@ -491,11 +448,11 @@ span {
   }
   
   .category-buttons button.active {
-    background-color: var(--second-bg-color);
+    background-color: blanchedalmond;
   }
   
   .category-buttons button:hover {
-    background-color: var(--second-bg-color);
+    background-color: blanchedalmond;
   }
   
   @media screen and (max-width: 768px) {
@@ -512,58 +469,84 @@ span {
     padding-right: 6rem;
  } */
 
- .services-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
- }
-
- .services-row .services-column {
-    padding: 2rem;
-    /* width: 100%;
-    height: 100%;
-    padding: 3.8rem;
-    font-size: 1.6rem;
-    color: var(--text-color);
-    background: transparent;
-    border-radius: .8rem;
-    border: .2rem solid var(--main-color); */
- }
  
  .contact {
   min-width: auto;
   padding-bottom: 7rem;
 }
 
-.contact-content {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+.header-image img {
+  width: 100%;
+  height: auto;
 }
 
-.video-container {
-  flex: 1;
-  width: 100%;
-  position: relative;
-  background: #000;
+.contact-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
 }
 
 .contact-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 45%;
   padding: 2rem;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
+  border-radius: 10px;
+  font-size: 2.2rem;
+}
+
+.contact-form {
+  width: 45%;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+.contact-form h2 {
+  margin-bottom: 1rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 40%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.contact-form button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--main-color);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: blanchedalmond;
+  transform: scale(1.1);
 }
 
 .contact-icons {
   display: flex;
   justify-content: space-around;
-  width: 100%;
-  max-width: 600px;
   margin-top: 2rem;
 }
 
@@ -600,6 +583,15 @@ span {
 .contact-icons .icon i.fa-whatsapp {
   color: #25D366;
 }
+
+
+/* Dynamic CSS for buttons and icons */
+button:hover, .icon:hover {
+  transform: scale(1.1);
+  background-color: var(--hover-bg-color);
+  color: var(--hover-text-color);
+}
+
 
 
 

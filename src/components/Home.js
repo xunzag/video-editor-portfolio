@@ -44,7 +44,7 @@ const Home = () => {
         <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={() => setShowModal(false)}>&times;</span>
-            <video  autoPlay loop controls width="100%" height="100%">
+            <video  autoPlay loop controls >
               <source src={sample} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
