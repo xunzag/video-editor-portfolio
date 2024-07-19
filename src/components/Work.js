@@ -1,19 +1,30 @@
 import React, { useState } from 'react';
+import sample1 from "../videos/sample1.mp4";
+import sample2 from "../videos/sample2.mp4";
+import sample3 from "../videos/sample3.mp4";
 
 const RecentWorks = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const handleCategoryFilter = (category) => {
     setSelectedCategory(category);
   };
 
+  const handleVideoClick = (videoSrc) => {
+    setSelectedVideo(videoSrc);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedVideo(null);
+  };
+
   const renderVideos = () => {
-    // Replace this with your actual video data and mapping logic based on selectedCategory
     const videos = [
-      { src: "../images/4.mp4", title: "Video Sample 1", category: "tv_commercials" },
-      { src: "../images/4.mp4", title: "Video Sample 2", category: "music_video" },
-      { src: "../images/4.mp4", title: "Video Sample 3", category: "feature_film" },
-      { src: "../images/4.mp4", title: "Video Sample 4", category: "documentary" },
+      { src: sample1, title: "Video Sample 1", category: "tv_commercials" },
+      { src: sample2, title: "Video Sample 2", category: "music_video" },
+      { src: sample3, title: "Video Sample 3", category: "feature_film" },
+      { src: sample1, title: "Video Sample 4", category: "documentary" },
     ];
 
     let filteredVideos = videos;
@@ -23,7 +34,9 @@ const RecentWorks = () => {
 
     return filteredVideos.map((video, index) => (
       <div className="video-column" key={index}>
-        <video controls src={video.src}></video>
+        <div className="video-item-container" onClick={() => handleVideoClick(video.src)}>
+          <video className="video-item" src={video.src} muted></video>
+        </div>
         <h1>{video.title}</h1>
       </div>
     ));
@@ -42,6 +55,13 @@ const RecentWorks = () => {
       <div className="video-row">
         {renderVideos()}
       </div>
+      {selectedVideo && (
+        <div className="modal-overlay" onClick={handleCloseModal}>
+          <div className="modal-content">
+            <video controls src={selectedVideo} className="modal-video"></video>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

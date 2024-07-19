@@ -1,0 +1,51 @@
+.video-slider-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust as needed */
+  overflow: hidden;
+  background: black; /* Optional: Background color to prevent black bars */
+}
+
+.video-slider {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  position: relative; /* Ensure positioning for control buttons */
+}
+
+.slide {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Overlay slides */
+}
+
+.slider-video {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* Ensure full video display */
+}
+
+.slider-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.slider-control.left {
+  left: 10px;
+}
+
+.slider-control.right {
+  right: 10px;
+}
