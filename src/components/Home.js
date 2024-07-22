@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <section className="home" id="home">
-      <div className="slideshow-container">
+      <div className="fullscreen-video-slider">
         <VideoSlider />
       </div>
       <div className="home-content-container">
